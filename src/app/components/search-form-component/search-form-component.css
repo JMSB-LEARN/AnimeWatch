@@ -1,0 +1,5 @@
+.form-group {
+    display: flex;
+    column-gap: 1vw;
+    margin-bottom: 1rem;
+}

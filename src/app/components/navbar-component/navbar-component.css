@@ -1,0 +1,13 @@
+ul {
+    width: 30vw;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+    padding: 0;
+    list-style: none;
+}
+
+li {
+    width: fit-content;
+}
