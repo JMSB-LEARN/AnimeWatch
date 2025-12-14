@@ -1,0 +1,6 @@
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <input formControlName="name" placeholder="Nombre">
+    </div>
+    <button type="submit" [disabled]="profileForm.invalid">Buscar</button>
+</form>

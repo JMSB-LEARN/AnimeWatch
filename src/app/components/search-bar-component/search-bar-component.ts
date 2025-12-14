@@ -1,23 +1,21 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
-import { AbstractControl, FormBuilder, Validators, ValidationErrors } from '@angular/forms';
+import { FormBuilder, Validators, ValidationErrors, AbstractControl } from '@angular/forms';
 import { inject } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-search-form-component',
+  selector: 'app-search-bar-component',
   imports: [ReactiveFormsModule],
-  templateUrl: './search-form-component.html',
-  styleUrl: './search-form-component.css',
+  templateUrl: './search-bar-component.html',
+  styleUrl: './search-bar-component.css',
 })
-export class SearchFormComponent {
-  @Output() searchEvent = new EventEmitter<{ name: string, sfw: boolean, status: string }>();
+export class SearchBarComponent {
+  @Output() searchEvent = new EventEmitter<{ name: string }>();
   private fb = inject(FormBuilder);
 
   // Creamos el formulario usando nonNullable
   profileForm = this.fb.nonNullable.group({
-    name: ['', [Validators.required, Validators.minLength(1), noWhitespaceValidator]],
-    sfw: [false, [Validators.required]],
-    status: ["", []]
+    name: ['', [Validators.required, Validators.minLength(1), noWhitespaceValidator]]
   });
 
   onSubmit() {
@@ -32,5 +30,3 @@ export function noWhitespaceValidator(control: AbstractControl): ValidationError
   const isValid = !isWhitespace;
   return isValid ? null : { whitespace: true };
 }
-
-

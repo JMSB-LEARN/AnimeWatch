@@ -1,1 +1,24 @@
-<p>home-page works!</p>
+<div class="topAnimes">
+    <h1>Top Animes</h1>
+    <p-carousel [value]="topAnimes" [numVisible]="4" [numScroll]="3" [circular]="false">
+        <ng-template let-anime #item>
+            <app-anime-card-component [animeInfo]="anime"></app-anime-card-component>
+        </ng-template>
+    </p-carousel>
+</div>
+<div class="seasonalAnimes">
+    <h1>Seasonal Animes</h1>
+    <p-carousel [value]="seasonalAnimes" [numVisible]="4" [numScroll]="3" [circular]="false">
+        <ng-template let-anime #item>
+            <app-anime-card-component [animeInfo]="anime"></app-anime-card-component>
+        </ng-template>
+    </p-carousel>
+</div>
+<div class="seasonalNextAnimes">
+    <h1>Seasonal Next Animes</h1>
+    <p-carousel [value]="seasonalNextAnimes" [numVisible]="4" [numScroll]="3" [circular]="false">
+        <ng-template let-anime #item>
+            <app-anime-card-component [animeInfo]="anime"></app-anime-card-component>
+        </ng-template>
+    </p-carousel>
+</div>

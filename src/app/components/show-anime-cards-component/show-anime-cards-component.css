@@ -1,0 +1,25 @@
+.found {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+:host>p {
+    font-size: 4rem;
+    margin: auto;
+}
+
+.loading {
+    text-align: center;
+    color: #fffd8d;
+}
+
+.error {
+    text-align: center;
+    color: #f43a37;
+}
+
+.no-anime {
+    text-align: center;
+    color: #cdcdcd;
+}

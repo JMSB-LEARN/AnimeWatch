@@ -1,5 +1,5 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet, Router } from '@angular/router';
 import { NavbarComponent } from './components/navbar-component/navbar-component';
 
 @Component({
@@ -10,4 +10,10 @@ import { NavbarComponent } from './components/navbar-component/navbar-component'
 })
 export class App {
   protected readonly title = signal('AnimeWatch');
+  constructor(private router: Router) { }
+
+  onSimpleSearch(event: { name: string }) {
+
+    this.router.navigate(['/search', event.name]);
+  }
 }

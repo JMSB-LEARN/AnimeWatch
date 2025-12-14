@@ -8,5 +8,6 @@ export const routes: Routes = [
     { path: '', component: HomePage },
     { path: 'anime/:id', component: DetailsPage },
     { path: 'my-animes', component: MyAnimesPage },
-    { path: 'search', component: SearchPage }
+    { path: 'search', component: SearchPage },
+    { path: 'search/:name', component: SearchPage }
 ];

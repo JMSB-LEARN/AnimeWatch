@@ -1,1 +1,16 @@
-<!--@for(cardInfo:{name:number,title:string,image_url:string,score:number}of )-->
+@if(isLoading){
+<p class="loading">Loading...</p>
+}
+@else if(error){
+<p class="error">Error: {{error}}</p>
+}@else{
+@if (!isLoading && !error && Animes.length === 0&&searchCriteria.name){
+<p class="no-anime">No anime found</p>
+}@else{
+<div class="found">
+    @for(cardInfo of Animes; track $index){
+    <app-anime-card-component [animeInfo]="cardInfo"></app-anime-card-component>
+    }
+</div>
+}
+}

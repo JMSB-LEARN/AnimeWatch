@@ -1,4 +1,9 @@
 body,
 html {
     margin: 0px;
+    background-color: black;
+}
+
+p {
+    color: #f3f4f6;
 }

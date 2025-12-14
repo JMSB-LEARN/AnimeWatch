@@ -1,0 +1,7 @@
+<div (click)="navigateToDetails()">
+    <img [src]="animeInfo?.image_url" alt="{{animeInfo?.title}}" class="card-bg">
+    <div class="score-badge">{{animeInfo?.score}} ★</div>
+    <div class="title-overlay">
+        <p>{{animeInfo?.title}}</p>
+    </div>
+</div>

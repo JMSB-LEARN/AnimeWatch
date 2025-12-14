@@ -45,9 +45,23 @@ export class AnimeApiRequester {
         return this.fetchData(`/random/anime`);
     }
     public async getAnimeSearch(name: string, sfw: boolean, status: string) {
-        const encodedQuery = encodeURIComponent(name);
-        const sfwParam = sfw ? 'true' : 'false';
-        const statusParam = encodeURIComponent(status);
-        return this.fetchData(`/anime?q=${encodedQuery}&sfw=${sfwParam}&status=${statusParam}`);
+        let searchEndpoint: string = `/anime?q=${name}`;
+        if (sfw) {
+            searchEndpoint += `&sfw=${sfw}`;
+        }
+        if (status) {
+            searchEndpoint += `&status=${status}`;
+        }
+        console.log(searchEndpoint);
+        return this.fetchData(searchEndpoint);
+    }
+    public async getTopAnimes() {
+        return this.fetchData(`/top/anime?limit=10`);
+    }
+    public async getAnimeSeason() {
+        return this.fetchData(`/seasons/now`);
+    }
+    public async getAnimeSeasonNext() {
+        return this.fetchData(`/seasons/upcoming`);
     }
 }

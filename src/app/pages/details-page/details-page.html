@@ -1,1 +1,15 @@
-<p>details-page works!</p>
+<!-- Mostrar imagen de alta calidad, sinopsis, número de episodios, estado (emisión/finalizado), géneros y puntuación.-->
+<p class="anime-title">{{anime?.title}}</p>
+<img [src]="anime?.image_url" alt="{{anime?.title}}" class="anime-image">
+<p class="anime-synopsis">{{anime?.synopsis}}</p>
+<div class="episodes">
+    @for (episode of episodes; track $index) {
+    <div class="episode">
+        <p class="episode-title">{{episode.title}}</p>
+        <p class="episode-score">{{episode.score}}</p>
+        <p class="episode-aired">{{episode.aired.split('T')[0]}}</p>
+    </div>
+    }
+</div>
+<p class="anime-status">{{anime?.status}}</p>
+<p class="anime-score">{{anime?.score}}</p>
